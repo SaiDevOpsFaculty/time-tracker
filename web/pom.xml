@@ -10,7 +10,7 @@
 
     <artifactId>time-tracker-web</artifactId>
     <packaging>war</packaging>
-    <name>Time Tracker (Web)</name>
+    <name>Time Trackers (Web)</name>
 
     <dependencies>
         <dependency>
