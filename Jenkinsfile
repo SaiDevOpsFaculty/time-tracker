@@ -11,6 +11,12 @@ pipeline {
       steps {
 	    sh '/opt/maven/apache-maven-3.6.3/bin/mvn test'
 	  }
+	  post {
+        always {
+          archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+          junit 'build/reports/**/*.xml'
+        }
+      }
 	}
 	stage('package') {
 	  steps {
