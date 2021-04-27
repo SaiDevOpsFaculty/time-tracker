@@ -6,11 +6,6 @@ pipeline{
               git 'https://github.com/sahooashok709/time-tracker.git'
             }
         }
-        stage("build in maven"){
-            steps{
-                sh "mvn clean package"
-            }
-        }
         stage("deploy in tomcat"){
             steps{
                 sshagent(['tomcat_server']) {
