@@ -8,11 +8,6 @@ pipeline {
       }
     }
 	stage('test') {
-	  post {
-        always {
-          junit 'target/surefire-reports/**/*.xml'
-        }
-      }
       steps {
 	    sh '/opt/maven/apache-maven-3.6.3/bin/mvn test'
 	  }
