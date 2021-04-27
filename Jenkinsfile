@@ -6,7 +6,7 @@ pipeline{
               git 'https://github.com/sahooashok709/time-tracker.git'
             }
         }
-        stage(build in maven){
+        stage("build in maven"){
             steps{
                 sh "mvn clean package"
             }
