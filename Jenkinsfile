@@ -8,14 +8,14 @@ pipeline {
       }
     }
 	stage('test') {
-      steps {
-	    sh '/opt/maven/apache-maven-3.6.3/bin/mvn test'
-	  }
 	  post {
         always {
           junit 'build/reports/**/*.xml'
         }
       }
+      steps {
+	    sh '/opt/maven/apache-maven-3.6.3/bin/mvn test'
+	  }
 	}
 	stage('package') {
 	  steps {
